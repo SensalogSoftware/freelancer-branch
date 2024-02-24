@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -40,7 +38,7 @@ static inline int i2s_configure(const struct device * dev, enum i2s_dir dir, con
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define i2s_configure(dev, dir, cfg) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_I2S_CONFIGURE, i2s_configure, dev, dir, cfg); 	syscall__retval = i2s_configure(dev, dir, cfg); 	sys_port_trace_syscall_exit(K_SYSCALL_I2S_CONFIGURE, i2s_configure, dev, dir, cfg, syscall__retval); 	syscall__retval; })
+#define i2s_configure(dev, dir, cfg) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_I2S_CONFIGURE, i2s_configure, dev, dir, cfg); 	retval = i2s_configure(dev, dir, cfg); 	sys_port_trace_syscall_exit(K_SYSCALL_I2S_CONFIGURE, i2s_configure, dev, dir, cfg, retval); 	retval; })
 #endif
 #endif
 
@@ -65,7 +63,7 @@ static inline int i2s_buf_read(const struct device * dev, void * buf, size_t * s
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define i2s_buf_read(dev, buf, size) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_I2S_BUF_READ, i2s_buf_read, dev, buf, size); 	syscall__retval = i2s_buf_read(dev, buf, size); 	sys_port_trace_syscall_exit(K_SYSCALL_I2S_BUF_READ, i2s_buf_read, dev, buf, size, syscall__retval); 	syscall__retval; })
+#define i2s_buf_read(dev, buf, size) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_I2S_BUF_READ, i2s_buf_read, dev, buf, size); 	retval = i2s_buf_read(dev, buf, size); 	sys_port_trace_syscall_exit(K_SYSCALL_I2S_BUF_READ, i2s_buf_read, dev, buf, size, retval); 	retval; })
 #endif
 #endif
 
@@ -90,7 +88,7 @@ static inline int i2s_buf_write(const struct device * dev, void * buf, size_t si
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define i2s_buf_write(dev, buf, size) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_I2S_BUF_WRITE, i2s_buf_write, dev, buf, size); 	syscall__retval = i2s_buf_write(dev, buf, size); 	sys_port_trace_syscall_exit(K_SYSCALL_I2S_BUF_WRITE, i2s_buf_write, dev, buf, size, syscall__retval); 	syscall__retval; })
+#define i2s_buf_write(dev, buf, size) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_I2S_BUF_WRITE, i2s_buf_write, dev, buf, size); 	retval = i2s_buf_write(dev, buf, size); 	sys_port_trace_syscall_exit(K_SYSCALL_I2S_BUF_WRITE, i2s_buf_write, dev, buf, size, retval); 	retval; })
 #endif
 #endif
 
@@ -115,7 +113,7 @@ static inline int i2s_trigger(const struct device * dev, enum i2s_dir dir, enum 
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define i2s_trigger(dev, dir, cmd) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_I2S_TRIGGER, i2s_trigger, dev, dir, cmd); 	syscall__retval = i2s_trigger(dev, dir, cmd); 	sys_port_trace_syscall_exit(K_SYSCALL_I2S_TRIGGER, i2s_trigger, dev, dir, cmd, syscall__retval); 	syscall__retval; })
+#define i2s_trigger(dev, dir, cmd) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_I2S_TRIGGER, i2s_trigger, dev, dir, cmd); 	retval = i2s_trigger(dev, dir, cmd); 	sys_port_trace_syscall_exit(K_SYSCALL_I2S_TRIGGER, i2s_trigger, dev, dir, cmd, retval); 	retval; })
 #endif
 #endif
 

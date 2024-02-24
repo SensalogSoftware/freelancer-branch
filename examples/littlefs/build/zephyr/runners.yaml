@@ -12,13 +12,13 @@ debug-runner: jlink
 
 # Common runner configuration values.
 config:
-  board_dir: /Users/bedmonds/Downloads/pill-v0-2da757df062c55a3d8de09b04de46386ed06fd3e/boards/arm/pill_v0_nrf5340
+  board_dir: /Users/bedmonds/Developer/Sensalog/Freelancer/freelancer-branch/boards/arm/pill_v0_nrf5340
   # Build outputs:
   elf_file: zephyr.elf
   hex_file: zephyr.hex
   bin_file: zephyr.bin
   # Host tools:
-  gdb: /opt/nordic/ncs/toolchains/20d68df7e5/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb
+  gdb: /opt/nordic/ncs/toolchains/4ef6631da0/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb
 
 # Runner specific arguments
 args:

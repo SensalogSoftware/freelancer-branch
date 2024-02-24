@@ -1,4 +1,4 @@
-# Install script for directory: /opt/nordic/ncs/v2.5.0/nrf/lib
+# Install script for directory: /opt/nordic/ncs/v2.4.1/nrf/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,21 +34,21 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/opt/nordic/ncs/toolchains/20d68df7e5/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump")
+  set(CMAKE_OBJDUMP "/opt/nordic/ncs/toolchains/4ef6631da0/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/bedmonds/Downloads/pill-v0-2da757df062c55a3d8de09b04de46386ed06fd3e/examples/littlefs/build/modules/nrf/lib/bin/cmake_install.cmake")
+  include("/Users/bedmonds/Developer/Sensalog/Freelancer/freelancer-branch/examples/littlefs/build/modules/nrf/lib/bin/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/bedmonds/Downloads/pill-v0-2da757df062c55a3d8de09b04de46386ed06fd3e/examples/littlefs/build/modules/nrf/lib/flash_patch/cmake_install.cmake")
+  include("/Users/bedmonds/Developer/Sensalog/Freelancer/freelancer-branch/examples/littlefs/build/modules/nrf/lib/flash_patch/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/bedmonds/Downloads/pill-v0-2da757df062c55a3d8de09b04de46386ed06fd3e/examples/littlefs/build/modules/nrf/lib/fatal_error/cmake_install.cmake")
+  include("/Users/bedmonds/Developer/Sensalog/Freelancer/freelancer-branch/examples/littlefs/build/modules/nrf/lib/fatal_error/cmake_install.cmake")
 endif()
 

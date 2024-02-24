@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -39,7 +37,7 @@ static inline int espi_config(const struct device * dev, struct espi_cfg * cfg)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_config(dev, cfg) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_CONFIG, espi_config, dev, cfg); 	syscall__retval = espi_config(dev, cfg); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_CONFIG, espi_config, dev, cfg, syscall__retval); 	syscall__retval; })
+#define espi_config(dev, cfg) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_CONFIG, espi_config, dev, cfg); 	retval = espi_config(dev, cfg); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_CONFIG, espi_config, dev, cfg, retval); 	retval; })
 #endif
 #endif
 
@@ -63,7 +61,7 @@ static inline bool espi_get_channel_status(const struct device * dev, enum espi_
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_get_channel_status(dev, ch) ({ 	bool syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_GET_CHANNEL_STATUS, espi_get_channel_status, dev, ch); 	syscall__retval = espi_get_channel_status(dev, ch); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_GET_CHANNEL_STATUS, espi_get_channel_status, dev, ch, syscall__retval); 	syscall__retval; })
+#define espi_get_channel_status(dev, ch) ({ 	bool retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_GET_CHANNEL_STATUS, espi_get_channel_status, dev, ch); 	retval = espi_get_channel_status(dev, ch); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_GET_CHANNEL_STATUS, espi_get_channel_status, dev, ch, retval); 	retval; })
 #endif
 #endif
 
@@ -87,7 +85,7 @@ static inline int espi_read_request(const struct device * dev, struct espi_reque
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_read_request(dev, req) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_READ_REQUEST, espi_read_request, dev, req); 	syscall__retval = espi_read_request(dev, req); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_READ_REQUEST, espi_read_request, dev, req, syscall__retval); 	syscall__retval; })
+#define espi_read_request(dev, req) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_READ_REQUEST, espi_read_request, dev, req); 	retval = espi_read_request(dev, req); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_READ_REQUEST, espi_read_request, dev, req, retval); 	retval; })
 #endif
 #endif
 
@@ -111,7 +109,7 @@ static inline int espi_write_request(const struct device * dev, struct espi_requ
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_write_request(dev, req) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_WRITE_REQUEST, espi_write_request, dev, req); 	syscall__retval = espi_write_request(dev, req); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_WRITE_REQUEST, espi_write_request, dev, req, syscall__retval); 	syscall__retval; })
+#define espi_write_request(dev, req) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_WRITE_REQUEST, espi_write_request, dev, req); 	retval = espi_write_request(dev, req); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_WRITE_REQUEST, espi_write_request, dev, req, retval); 	retval; })
 #endif
 #endif
 
@@ -136,7 +134,7 @@ static inline int espi_read_lpc_request(const struct device * dev, enum lpc_peri
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_read_lpc_request(dev, op, data) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_READ_LPC_REQUEST, espi_read_lpc_request, dev, op, data); 	syscall__retval = espi_read_lpc_request(dev, op, data); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_READ_LPC_REQUEST, espi_read_lpc_request, dev, op, data, syscall__retval); 	syscall__retval; })
+#define espi_read_lpc_request(dev, op, data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_READ_LPC_REQUEST, espi_read_lpc_request, dev, op, data); 	retval = espi_read_lpc_request(dev, op, data); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_READ_LPC_REQUEST, espi_read_lpc_request, dev, op, data, retval); 	retval; })
 #endif
 #endif
 
@@ -161,7 +159,7 @@ static inline int espi_write_lpc_request(const struct device * dev, enum lpc_per
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_write_lpc_request(dev, op, data) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_WRITE_LPC_REQUEST, espi_write_lpc_request, dev, op, data); 	syscall__retval = espi_write_lpc_request(dev, op, data); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_WRITE_LPC_REQUEST, espi_write_lpc_request, dev, op, data, syscall__retval); 	syscall__retval; })
+#define espi_write_lpc_request(dev, op, data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_WRITE_LPC_REQUEST, espi_write_lpc_request, dev, op, data); 	retval = espi_write_lpc_request(dev, op, data); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_WRITE_LPC_REQUEST, espi_write_lpc_request, dev, op, data, retval); 	retval; })
 #endif
 #endif
 
@@ -186,7 +184,7 @@ static inline int espi_send_vwire(const struct device * dev, enum espi_vwire_sig
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_send_vwire(dev, signal, level) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_SEND_VWIRE, espi_send_vwire, dev, signal, level); 	syscall__retval = espi_send_vwire(dev, signal, level); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_SEND_VWIRE, espi_send_vwire, dev, signal, level, syscall__retval); 	syscall__retval; })
+#define espi_send_vwire(dev, signal, level) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_SEND_VWIRE, espi_send_vwire, dev, signal, level); 	retval = espi_send_vwire(dev, signal, level); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_SEND_VWIRE, espi_send_vwire, dev, signal, level, retval); 	retval; })
 #endif
 #endif
 
@@ -211,7 +209,7 @@ static inline int espi_receive_vwire(const struct device * dev, enum espi_vwire_
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_receive_vwire(dev, signal, level) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_RECEIVE_VWIRE, espi_receive_vwire, dev, signal, level); 	syscall__retval = espi_receive_vwire(dev, signal, level); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_RECEIVE_VWIRE, espi_receive_vwire, dev, signal, level, syscall__retval); 	syscall__retval; })
+#define espi_receive_vwire(dev, signal, level) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_RECEIVE_VWIRE, espi_receive_vwire, dev, signal, level); 	retval = espi_receive_vwire(dev, signal, level); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_RECEIVE_VWIRE, espi_receive_vwire, dev, signal, level, retval); 	retval; })
 #endif
 #endif
 
@@ -235,7 +233,7 @@ static inline int espi_send_oob(const struct device * dev, struct espi_oob_packe
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_send_oob(dev, pckt) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_SEND_OOB, espi_send_oob, dev, pckt); 	syscall__retval = espi_send_oob(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_SEND_OOB, espi_send_oob, dev, pckt, syscall__retval); 	syscall__retval; })
+#define espi_send_oob(dev, pckt) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_SEND_OOB, espi_send_oob, dev, pckt); 	retval = espi_send_oob(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_SEND_OOB, espi_send_oob, dev, pckt, retval); 	retval; })
 #endif
 #endif
 
@@ -259,7 +257,7 @@ static inline int espi_receive_oob(const struct device * dev, struct espi_oob_pa
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_receive_oob(dev, pckt) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_RECEIVE_OOB, espi_receive_oob, dev, pckt); 	syscall__retval = espi_receive_oob(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_RECEIVE_OOB, espi_receive_oob, dev, pckt, syscall__retval); 	syscall__retval; })
+#define espi_receive_oob(dev, pckt) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_RECEIVE_OOB, espi_receive_oob, dev, pckt); 	retval = espi_receive_oob(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_RECEIVE_OOB, espi_receive_oob, dev, pckt, retval); 	retval; })
 #endif
 #endif
 
@@ -283,7 +281,7 @@ static inline int espi_read_flash(const struct device * dev, struct espi_flash_p
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_read_flash(dev, pckt) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_READ_FLASH, espi_read_flash, dev, pckt); 	syscall__retval = espi_read_flash(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_READ_FLASH, espi_read_flash, dev, pckt, syscall__retval); 	syscall__retval; })
+#define espi_read_flash(dev, pckt) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_READ_FLASH, espi_read_flash, dev, pckt); 	retval = espi_read_flash(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_READ_FLASH, espi_read_flash, dev, pckt, retval); 	retval; })
 #endif
 #endif
 
@@ -307,7 +305,7 @@ static inline int espi_write_flash(const struct device * dev, struct espi_flash_
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_write_flash(dev, pckt) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_WRITE_FLASH, espi_write_flash, dev, pckt); 	syscall__retval = espi_write_flash(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_WRITE_FLASH, espi_write_flash, dev, pckt, syscall__retval); 	syscall__retval; })
+#define espi_write_flash(dev, pckt) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_WRITE_FLASH, espi_write_flash, dev, pckt); 	retval = espi_write_flash(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_WRITE_FLASH, espi_write_flash, dev, pckt, retval); 	retval; })
 #endif
 #endif
 
@@ -331,7 +329,7 @@ static inline int espi_flash_erase(const struct device * dev, struct espi_flash_
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define espi_flash_erase(dev, pckt) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_FLASH_ERASE, espi_flash_erase, dev, pckt); 	syscall__retval = espi_flash_erase(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_FLASH_ERASE, espi_flash_erase, dev, pckt, syscall__retval); 	syscall__retval; })
+#define espi_flash_erase(dev, pckt) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ESPI_FLASH_ERASE, espi_flash_erase, dev, pckt); 	retval = espi_flash_erase(dev, pckt); 	sys_port_trace_syscall_exit(K_SYSCALL_ESPI_FLASH_ERASE, espi_flash_erase, dev, pckt, retval); 	retval; })
 #endif
 #endif
 

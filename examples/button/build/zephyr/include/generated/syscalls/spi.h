@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -41,7 +39,7 @@ static inline int spi_transceive(const struct device * dev, const struct spi_con
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define spi_transceive(dev, config, tx_bufs, rx_bufs) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SPI_TRANSCEIVE, spi_transceive, dev, config, tx_bufs, rx_bufs); 	syscall__retval = spi_transceive(dev, config, tx_bufs, rx_bufs); 	sys_port_trace_syscall_exit(K_SYSCALL_SPI_TRANSCEIVE, spi_transceive, dev, config, tx_bufs, rx_bufs, syscall__retval); 	syscall__retval; })
+#define spi_transceive(dev, config, tx_bufs, rx_bufs) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SPI_TRANSCEIVE, spi_transceive, dev, config, tx_bufs, rx_bufs); 	retval = spi_transceive(dev, config, tx_bufs, rx_bufs); 	sys_port_trace_syscall_exit(K_SYSCALL_SPI_TRANSCEIVE, spi_transceive, dev, config, tx_bufs, rx_bufs, retval); 	retval; })
 #endif
 #endif
 
@@ -65,7 +63,7 @@ static inline int spi_release(const struct device * dev, const struct spi_config
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define spi_release(dev, config) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SPI_RELEASE, spi_release, dev, config); 	syscall__retval = spi_release(dev, config); 	sys_port_trace_syscall_exit(K_SYSCALL_SPI_RELEASE, spi_release, dev, config, syscall__retval); 	syscall__retval; })
+#define spi_release(dev, config) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SPI_RELEASE, spi_release, dev, config); 	retval = spi_release(dev, config); 	sys_port_trace_syscall_exit(K_SYSCALL_SPI_RELEASE, spi_release, dev, config, retval); 	retval; })
 #endif
 #endif
 

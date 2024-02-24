@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -40,7 +38,7 @@ static inline int entropy_get_entropy(const struct device * dev, uint8_t * buffe
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define entropy_get_entropy(dev, buffer, length) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ENTROPY_GET_ENTROPY, entropy_get_entropy, dev, buffer, length); 	syscall__retval = entropy_get_entropy(dev, buffer, length); 	sys_port_trace_syscall_exit(K_SYSCALL_ENTROPY_GET_ENTROPY, entropy_get_entropy, dev, buffer, length, syscall__retval); 	syscall__retval; })
+#define entropy_get_entropy(dev, buffer, length) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ENTROPY_GET_ENTROPY, entropy_get_entropy, dev, buffer, length); 	retval = entropy_get_entropy(dev, buffer, length); 	sys_port_trace_syscall_exit(K_SYSCALL_ENTROPY_GET_ENTROPY, entropy_get_entropy, dev, buffer, length, retval); 	retval; })
 #endif
 #endif
 

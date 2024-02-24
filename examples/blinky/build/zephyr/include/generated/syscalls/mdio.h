@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -89,7 +87,7 @@ static inline int mdio_read(const struct device * dev, uint8_t prtad, uint8_t de
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define mdio_read(dev, prtad, devad, data) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MDIO_READ, mdio_read, dev, prtad, devad, data); 	syscall__retval = mdio_read(dev, prtad, devad, data); 	sys_port_trace_syscall_exit(K_SYSCALL_MDIO_READ, mdio_read, dev, prtad, devad, data, syscall__retval); 	syscall__retval; })
+#define mdio_read(dev, prtad, devad, data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MDIO_READ, mdio_read, dev, prtad, devad, data); 	retval = mdio_read(dev, prtad, devad, data); 	sys_port_trace_syscall_exit(K_SYSCALL_MDIO_READ, mdio_read, dev, prtad, devad, data, retval); 	retval; })
 #endif
 #endif
 
@@ -115,7 +113,7 @@ static inline int mdio_write(const struct device * dev, uint8_t prtad, uint8_t d
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define mdio_write(dev, prtad, devad, data) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MDIO_WRITE, mdio_write, dev, prtad, devad, data); 	syscall__retval = mdio_write(dev, prtad, devad, data); 	sys_port_trace_syscall_exit(K_SYSCALL_MDIO_WRITE, mdio_write, dev, prtad, devad, data, syscall__retval); 	syscall__retval; })
+#define mdio_write(dev, prtad, devad, data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MDIO_WRITE, mdio_write, dev, prtad, devad, data); 	retval = mdio_write(dev, prtad, devad, data); 	sys_port_trace_syscall_exit(K_SYSCALL_MDIO_WRITE, mdio_write, dev, prtad, devad, data, retval); 	retval; })
 #endif
 #endif
 

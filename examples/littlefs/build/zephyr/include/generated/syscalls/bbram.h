@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -38,7 +36,7 @@ static inline int bbram_check_invalid(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define bbram_check_invalid(dev) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_CHECK_INVALID, bbram_check_invalid, dev); 	syscall__retval = bbram_check_invalid(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_CHECK_INVALID, bbram_check_invalid, dev, syscall__retval); 	syscall__retval; })
+#define bbram_check_invalid(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_CHECK_INVALID, bbram_check_invalid, dev); 	retval = bbram_check_invalid(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_CHECK_INVALID, bbram_check_invalid, dev, retval); 	retval; })
 #endif
 #endif
 
@@ -61,7 +59,7 @@ static inline int bbram_check_standby_power(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define bbram_check_standby_power(dev) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_CHECK_STANDBY_POWER, bbram_check_standby_power, dev); 	syscall__retval = bbram_check_standby_power(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_CHECK_STANDBY_POWER, bbram_check_standby_power, dev, syscall__retval); 	syscall__retval; })
+#define bbram_check_standby_power(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_CHECK_STANDBY_POWER, bbram_check_standby_power, dev); 	retval = bbram_check_standby_power(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_CHECK_STANDBY_POWER, bbram_check_standby_power, dev, retval); 	retval; })
 #endif
 #endif
 
@@ -84,7 +82,7 @@ static inline int bbram_check_power(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define bbram_check_power(dev) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_CHECK_POWER, bbram_check_power, dev); 	syscall__retval = bbram_check_power(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_CHECK_POWER, bbram_check_power, dev, syscall__retval); 	syscall__retval; })
+#define bbram_check_power(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_CHECK_POWER, bbram_check_power, dev); 	retval = bbram_check_power(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_CHECK_POWER, bbram_check_power, dev, retval); 	retval; })
 #endif
 #endif
 
@@ -108,7 +106,7 @@ static inline int bbram_get_size(const struct device * dev, size_t * size)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define bbram_get_size(dev, size) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_GET_SIZE, bbram_get_size, dev, size); 	syscall__retval = bbram_get_size(dev, size); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_GET_SIZE, bbram_get_size, dev, size, syscall__retval); 	syscall__retval; })
+#define bbram_get_size(dev, size) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_GET_SIZE, bbram_get_size, dev, size); 	retval = bbram_get_size(dev, size); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_GET_SIZE, bbram_get_size, dev, size, retval); 	retval; })
 #endif
 #endif
 
@@ -134,7 +132,7 @@ static inline int bbram_read(const struct device * dev, size_t offset, size_t si
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define bbram_read(dev, offset, size, data) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_READ, bbram_read, dev, offset, size, data); 	syscall__retval = bbram_read(dev, offset, size, data); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_READ, bbram_read, dev, offset, size, data, syscall__retval); 	syscall__retval; })
+#define bbram_read(dev, offset, size, data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_READ, bbram_read, dev, offset, size, data); 	retval = bbram_read(dev, offset, size, data); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_READ, bbram_read, dev, offset, size, data, retval); 	retval; })
 #endif
 #endif
 
@@ -160,7 +158,7 @@ static inline int bbram_write(const struct device * dev, size_t offset, size_t s
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define bbram_write(dev, offset, size, data) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_WRITE, bbram_write, dev, offset, size, data); 	syscall__retval = bbram_write(dev, offset, size, data); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_WRITE, bbram_write, dev, offset, size, data, syscall__retval); 	syscall__retval; })
+#define bbram_write(dev, offset, size, data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_BBRAM_WRITE, bbram_write, dev, offset, size, data); 	retval = bbram_write(dev, offset, size, data); 	sys_port_trace_syscall_exit(K_SYSCALL_BBRAM_WRITE, bbram_write, dev, offset, size, data, retval); 	retval; })
 #endif
 #endif
 

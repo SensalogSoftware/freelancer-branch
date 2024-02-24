@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -39,7 +37,7 @@ static inline void * flash_simulator_get_memory(const struct device * dev, size_
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define flash_simulator_get_memory(dev, mock_size) ({ 	void * syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_SIMULATOR_GET_MEMORY, flash_simulator_get_memory, dev, mock_size); 	syscall__retval = flash_simulator_get_memory(dev, mock_size); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_SIMULATOR_GET_MEMORY, flash_simulator_get_memory, dev, mock_size, syscall__retval); 	syscall__retval; })
+#define flash_simulator_get_memory(dev, mock_size) ({ 	void * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_SIMULATOR_GET_MEMORY, flash_simulator_get_memory, dev, mock_size); 	retval = flash_simulator_get_memory(dev, mock_size); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_SIMULATOR_GET_MEMORY, flash_simulator_get_memory, dev, mock_size, retval); 	retval; })
 #endif
 #endif
 

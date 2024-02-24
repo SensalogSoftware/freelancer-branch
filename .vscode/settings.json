@@ -1,0 +1,10 @@
+{
+    "nrf-connect.applications": [
+        "${workspaceFolder}/examples/adc",
+        "${workspaceFolder}/examples/blinky",
+        "${workspaceFolder}/examples/button",
+        "${workspaceFolder}/examples/icm20948",
+        "${workspaceFolder}/examples/littlefs",
+        "${workspaceFolder}/examples/uart"
+    ]
+}

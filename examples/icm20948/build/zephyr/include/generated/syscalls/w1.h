@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -39,7 +37,7 @@ static inline int w1_change_bus_lock(const struct device * dev, bool lock)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_change_bus_lock(dev, lock) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_CHANGE_BUS_LOCK, w1_change_bus_lock, dev, lock); 	syscall__retval = w1_change_bus_lock(dev, lock); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_CHANGE_BUS_LOCK, w1_change_bus_lock, dev, lock, syscall__retval); 	syscall__retval; })
+#define w1_change_bus_lock(dev, lock) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_CHANGE_BUS_LOCK, w1_change_bus_lock, dev, lock); 	retval = w1_change_bus_lock(dev, lock); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_CHANGE_BUS_LOCK, w1_change_bus_lock, dev, lock, retval); 	retval; })
 #endif
 #endif
 
@@ -62,7 +60,7 @@ static inline int w1_reset_bus(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_reset_bus(dev) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_RESET_BUS, w1_reset_bus, dev); 	syscall__retval = w1_reset_bus(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_RESET_BUS, w1_reset_bus, dev, syscall__retval); 	syscall__retval; })
+#define w1_reset_bus(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_RESET_BUS, w1_reset_bus, dev); 	retval = w1_reset_bus(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_RESET_BUS, w1_reset_bus, dev, retval); 	retval; })
 #endif
 #endif
 
@@ -85,7 +83,7 @@ static inline int w1_read_bit(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_read_bit(dev) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_READ_BIT, w1_read_bit, dev); 	syscall__retval = w1_read_bit(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_READ_BIT, w1_read_bit, dev, syscall__retval); 	syscall__retval; })
+#define w1_read_bit(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_READ_BIT, w1_read_bit, dev); 	retval = w1_read_bit(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_READ_BIT, w1_read_bit, dev, retval); 	retval; })
 #endif
 #endif
 
@@ -109,7 +107,7 @@ static inline int w1_write_bit(const struct device * dev, const bool bit)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_write_bit(dev, bit) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_WRITE_BIT, w1_write_bit, dev, bit); 	syscall__retval = w1_write_bit(dev, bit); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_WRITE_BIT, w1_write_bit, dev, bit, syscall__retval); 	syscall__retval; })
+#define w1_write_bit(dev, bit) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_WRITE_BIT, w1_write_bit, dev, bit); 	retval = w1_write_bit(dev, bit); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_WRITE_BIT, w1_write_bit, dev, bit, retval); 	retval; })
 #endif
 #endif
 
@@ -132,7 +130,7 @@ static inline int w1_read_byte(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_read_byte(dev) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_READ_BYTE, w1_read_byte, dev); 	syscall__retval = w1_read_byte(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_READ_BYTE, w1_read_byte, dev, syscall__retval); 	syscall__retval; })
+#define w1_read_byte(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_READ_BYTE, w1_read_byte, dev); 	retval = w1_read_byte(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_READ_BYTE, w1_read_byte, dev, retval); 	retval; })
 #endif
 #endif
 
@@ -156,7 +154,7 @@ static inline int w1_write_byte(const struct device * dev, uint8_t byte)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_write_byte(dev, byte) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_WRITE_BYTE, w1_write_byte, dev, byte); 	syscall__retval = w1_write_byte(dev, byte); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_WRITE_BYTE, w1_write_byte, dev, byte, syscall__retval); 	syscall__retval; })
+#define w1_write_byte(dev, byte) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_WRITE_BYTE, w1_write_byte, dev, byte); 	retval = w1_write_byte(dev, byte); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_WRITE_BYTE, w1_write_byte, dev, byte, retval); 	retval; })
 #endif
 #endif
 
@@ -181,7 +179,7 @@ static inline int w1_read_block(const struct device * dev, uint8_t * buffer, siz
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_read_block(dev, buffer, len) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_READ_BLOCK, w1_read_block, dev, buffer, len); 	syscall__retval = w1_read_block(dev, buffer, len); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_READ_BLOCK, w1_read_block, dev, buffer, len, syscall__retval); 	syscall__retval; })
+#define w1_read_block(dev, buffer, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_READ_BLOCK, w1_read_block, dev, buffer, len); 	retval = w1_read_block(dev, buffer, len); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_READ_BLOCK, w1_read_block, dev, buffer, len, retval); 	retval; })
 #endif
 #endif
 
@@ -206,7 +204,7 @@ static inline int w1_write_block(const struct device * dev, const uint8_t * buff
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_write_block(dev, buffer, len) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_WRITE_BLOCK, w1_write_block, dev, buffer, len); 	syscall__retval = w1_write_block(dev, buffer, len); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_WRITE_BLOCK, w1_write_block, dev, buffer, len, syscall__retval); 	syscall__retval; })
+#define w1_write_block(dev, buffer, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_WRITE_BLOCK, w1_write_block, dev, buffer, len); 	retval = w1_write_block(dev, buffer, len); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_WRITE_BLOCK, w1_write_block, dev, buffer, len, retval); 	retval; })
 #endif
 #endif
 
@@ -229,7 +227,7 @@ static inline size_t w1_get_slave_count(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_get_slave_count(dev) ({ 	size_t syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_GET_SLAVE_COUNT, w1_get_slave_count, dev); 	syscall__retval = w1_get_slave_count(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_GET_SLAVE_COUNT, w1_get_slave_count, dev, syscall__retval); 	syscall__retval; })
+#define w1_get_slave_count(dev) ({ 	size_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_GET_SLAVE_COUNT, w1_get_slave_count, dev); 	retval = w1_get_slave_count(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_GET_SLAVE_COUNT, w1_get_slave_count, dev, retval); 	retval; })
 #endif
 #endif
 
@@ -254,7 +252,7 @@ static inline int w1_configure(const struct device * dev, enum w1_settings_type 
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_configure(dev, type, value) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_CONFIGURE, w1_configure, dev, type, value); 	syscall__retval = w1_configure(dev, type, value); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_CONFIGURE, w1_configure, dev, type, value, syscall__retval); 	syscall__retval; })
+#define w1_configure(dev, type, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_CONFIGURE, w1_configure, dev, type, value); 	retval = w1_configure(dev, type, value); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_CONFIGURE, w1_configure, dev, type, value, retval); 	retval; })
 #endif
 #endif
 
@@ -281,7 +279,7 @@ static inline int w1_search_bus(const struct device * dev, uint8_t command, uint
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define w1_search_bus(dev, command, family, callback, user_data) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_SEARCH_BUS, w1_search_bus, dev, command, family, callback, user_data); 	syscall__retval = w1_search_bus(dev, command, family, callback, user_data); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_SEARCH_BUS, w1_search_bus, dev, command, family, callback, user_data, syscall__retval); 	syscall__retval; })
+#define w1_search_bus(dev, command, family, callback, user_data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_W1_SEARCH_BUS, w1_search_bus, dev, command, family, callback, user_data); 	retval = w1_search_bus(dev, command, family, callback, user_data); 	sys_port_trace_syscall_exit(K_SYSCALL_W1_SEARCH_BUS, w1_search_bus, dev, command, family, callback, user_data, retval); 	retval; })
 #endif
 #endif
 

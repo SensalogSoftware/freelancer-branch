@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -39,7 +37,7 @@ static inline int phy_configure_link(const struct device * dev, enum phy_link_sp
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define phy_configure_link(dev, speeds) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_CONFIGURE_LINK, phy_configure_link, dev, speeds); 	syscall__retval = phy_configure_link(dev, speeds); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_CONFIGURE_LINK, phy_configure_link, dev, speeds, syscall__retval); 	syscall__retval; })
+#define phy_configure_link(dev, speeds) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_CONFIGURE_LINK, phy_configure_link, dev, speeds); 	retval = phy_configure_link(dev, speeds); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_CONFIGURE_LINK, phy_configure_link, dev, speeds, retval); 	retval; })
 #endif
 #endif
 
@@ -63,7 +61,7 @@ static inline int phy_get_link_state(const struct device * dev, struct phy_link_
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define phy_get_link_state(dev, state) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_GET_LINK_STATE, phy_get_link_state, dev, state); 	syscall__retval = phy_get_link_state(dev, state); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_GET_LINK_STATE, phy_get_link_state, dev, state, syscall__retval); 	syscall__retval; })
+#define phy_get_link_state(dev, state) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_GET_LINK_STATE, phy_get_link_state, dev, state); 	retval = phy_get_link_state(dev, state); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_GET_LINK_STATE, phy_get_link_state, dev, state, retval); 	retval; })
 #endif
 #endif
 
@@ -88,7 +86,7 @@ static inline int phy_link_callback_set(const struct device * dev, phy_callback_
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define phy_link_callback_set(dev, callback, user_data) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_LINK_CALLBACK_SET, phy_link_callback_set, dev, callback, user_data); 	syscall__retval = phy_link_callback_set(dev, callback, user_data); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_LINK_CALLBACK_SET, phy_link_callback_set, dev, callback, user_data, syscall__retval); 	syscall__retval; })
+#define phy_link_callback_set(dev, callback, user_data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_LINK_CALLBACK_SET, phy_link_callback_set, dev, callback, user_data); 	retval = phy_link_callback_set(dev, callback, user_data); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_LINK_CALLBACK_SET, phy_link_callback_set, dev, callback, user_data, retval); 	retval; })
 #endif
 #endif
 
@@ -113,7 +111,7 @@ static inline int phy_read(const struct device * dev, uint16_t reg_addr, uint32_
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define phy_read(dev, reg_addr, value) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_READ, phy_read, dev, reg_addr, value); 	syscall__retval = phy_read(dev, reg_addr, value); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_READ, phy_read, dev, reg_addr, value, syscall__retval); 	syscall__retval; })
+#define phy_read(dev, reg_addr, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_READ, phy_read, dev, reg_addr, value); 	retval = phy_read(dev, reg_addr, value); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_READ, phy_read, dev, reg_addr, value, retval); 	retval; })
 #endif
 #endif
 
@@ -138,7 +136,7 @@ static inline int phy_write(const struct device * dev, uint16_t reg_addr, uint32
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define phy_write(dev, reg_addr, value) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_WRITE, phy_write, dev, reg_addr, value); 	syscall__retval = phy_write(dev, reg_addr, value); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_WRITE, phy_write, dev, reg_addr, value, syscall__retval); 	syscall__retval; })
+#define phy_write(dev, reg_addr, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_WRITE, phy_write, dev, reg_addr, value); 	retval = phy_write(dev, reg_addr, value); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_WRITE, phy_write, dev, reg_addr, value, retval); 	retval; })
 #endif
 #endif
 

@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -37,7 +35,7 @@ static inline uint32_t sys_rand32_get(void)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define sys_rand32_get() ({ 	uint32_t syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_RAND32_GET, sys_rand32_get); 	syscall__retval = sys_rand32_get(); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_RAND32_GET, sys_rand32_get, syscall__retval); 	syscall__retval; })
+#define sys_rand32_get() ({ 	uint32_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_RAND32_GET, sys_rand32_get); 	retval = sys_rand32_get(); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_RAND32_GET, sys_rand32_get, retval); 	retval; })
 #endif
 #endif
 
@@ -86,7 +84,7 @@ static inline int sys_csrand_get(void * dst, size_t len)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define sys_csrand_get(dst, len) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_CSRAND_GET, sys_csrand_get, dst, len); 	syscall__retval = sys_csrand_get(dst, len); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_CSRAND_GET, sys_csrand_get, dst, len, syscall__retval); 	syscall__retval; })
+#define sys_csrand_get(dst, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_CSRAND_GET, sys_csrand_get, dst, len); 	retval = sys_csrand_get(dst, len); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_CSRAND_GET, sys_csrand_get, dst, len, retval); 	retval; })
 #endif
 #endif
 

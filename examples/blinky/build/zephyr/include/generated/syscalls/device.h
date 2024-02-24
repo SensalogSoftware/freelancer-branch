@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -38,7 +36,7 @@ static inline const struct device * device_get_binding(const char * name)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define device_get_binding(name) ({ 	const struct device * syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_DEVICE_GET_BINDING, device_get_binding, name); 	syscall__retval = device_get_binding(name); 	sys_port_trace_syscall_exit(K_SYSCALL_DEVICE_GET_BINDING, device_get_binding, name, syscall__retval); 	syscall__retval; })
+#define device_get_binding(name) ({ 	const struct device * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_DEVICE_GET_BINDING, device_get_binding, name); 	retval = device_get_binding(name); 	sys_port_trace_syscall_exit(K_SYSCALL_DEVICE_GET_BINDING, device_get_binding, name, retval); 	retval; })
 #endif
 #endif
 
@@ -61,7 +59,7 @@ static inline bool device_is_ready(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define device_is_ready(dev) ({ 	bool syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_DEVICE_IS_READY, device_is_ready, dev); 	syscall__retval = device_is_ready(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_DEVICE_IS_READY, device_is_ready, dev, syscall__retval); 	syscall__retval; })
+#define device_is_ready(dev) ({ 	bool retval; 	sys_port_trace_syscall_enter(K_SYSCALL_DEVICE_IS_READY, device_is_ready, dev); 	retval = device_is_ready(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_DEVICE_IS_READY, device_is_ready, dev, retval); 	retval; })
 #endif
 #endif
 

@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -41,7 +39,7 @@ static inline int led_blink(const struct device * dev, uint32_t led, uint32_t de
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define led_blink(dev, led, delay_on, delay_off) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_BLINK, led_blink, dev, led, delay_on, delay_off); 	syscall__retval = led_blink(dev, led, delay_on, delay_off); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_BLINK, led_blink, dev, led, delay_on, delay_off, syscall__retval); 	syscall__retval; })
+#define led_blink(dev, led, delay_on, delay_off) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_BLINK, led_blink, dev, led, delay_on, delay_off); 	retval = led_blink(dev, led, delay_on, delay_off); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_BLINK, led_blink, dev, led, delay_on, delay_off, retval); 	retval; })
 #endif
 #endif
 
@@ -66,7 +64,7 @@ static inline int led_get_info(const struct device * dev, uint32_t led, const st
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define led_get_info(dev, led, info) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_GET_INFO, led_get_info, dev, led, info); 	syscall__retval = led_get_info(dev, led, info); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_GET_INFO, led_get_info, dev, led, info, syscall__retval); 	syscall__retval; })
+#define led_get_info(dev, led, info) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_GET_INFO, led_get_info, dev, led, info); 	retval = led_get_info(dev, led, info); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_GET_INFO, led_get_info, dev, led, info, retval); 	retval; })
 #endif
 #endif
 
@@ -91,7 +89,7 @@ static inline int led_set_brightness(const struct device * dev, uint32_t led, ui
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define led_set_brightness(dev, led, value) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_BRIGHTNESS, led_set_brightness, dev, led, value); 	syscall__retval = led_set_brightness(dev, led, value); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_BRIGHTNESS, led_set_brightness, dev, led, value, syscall__retval); 	syscall__retval; })
+#define led_set_brightness(dev, led, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_BRIGHTNESS, led_set_brightness, dev, led, value); 	retval = led_set_brightness(dev, led, value); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_BRIGHTNESS, led_set_brightness, dev, led, value, retval); 	retval; })
 #endif
 #endif
 
@@ -117,7 +115,7 @@ static inline int led_write_channels(const struct device * dev, uint32_t start_c
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define led_write_channels(dev, start_channel, num_channels, buf) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_WRITE_CHANNELS, led_write_channels, dev, start_channel, num_channels, buf); 	syscall__retval = led_write_channels(dev, start_channel, num_channels, buf); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_WRITE_CHANNELS, led_write_channels, dev, start_channel, num_channels, buf, syscall__retval); 	syscall__retval; })
+#define led_write_channels(dev, start_channel, num_channels, buf) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_WRITE_CHANNELS, led_write_channels, dev, start_channel, num_channels, buf); 	retval = led_write_channels(dev, start_channel, num_channels, buf); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_WRITE_CHANNELS, led_write_channels, dev, start_channel, num_channels, buf, retval); 	retval; })
 #endif
 #endif
 
@@ -142,7 +140,7 @@ static inline int led_set_channel(const struct device * dev, uint32_t channel, u
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define led_set_channel(dev, channel, value) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_CHANNEL, led_set_channel, dev, channel, value); 	syscall__retval = led_set_channel(dev, channel, value); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_CHANNEL, led_set_channel, dev, channel, value, syscall__retval); 	syscall__retval; })
+#define led_set_channel(dev, channel, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_CHANNEL, led_set_channel, dev, channel, value); 	retval = led_set_channel(dev, channel, value); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_CHANNEL, led_set_channel, dev, channel, value, retval); 	retval; })
 #endif
 #endif
 
@@ -168,7 +166,7 @@ static inline int led_set_color(const struct device * dev, uint32_t led, uint8_t
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define led_set_color(dev, led, num_colors, color) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_COLOR, led_set_color, dev, led, num_colors, color); 	syscall__retval = led_set_color(dev, led, num_colors, color); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_COLOR, led_set_color, dev, led, num_colors, color, syscall__retval); 	syscall__retval; })
+#define led_set_color(dev, led, num_colors, color) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_COLOR, led_set_color, dev, led, num_colors, color); 	retval = led_set_color(dev, led, num_colors, color); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_COLOR, led_set_color, dev, led, num_colors, color, retval); 	retval; })
 #endif
 #endif
 
@@ -192,7 +190,7 @@ static inline int led_on(const struct device * dev, uint32_t led)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define led_on(dev, led) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_ON, led_on, dev, led); 	syscall__retval = led_on(dev, led); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_ON, led_on, dev, led, syscall__retval); 	syscall__retval; })
+#define led_on(dev, led) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_ON, led_on, dev, led); 	retval = led_on(dev, led); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_ON, led_on, dev, led, retval); 	retval; })
 #endif
 #endif
 
@@ -216,7 +214,7 @@ static inline int led_off(const struct device * dev, uint32_t led)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define led_off(dev, led) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_OFF, led_off, dev, led); 	syscall__retval = led_off(dev, led); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_OFF, led_off, dev, led, syscall__retval); 	syscall__retval; })
+#define led_off(dev, led) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_OFF, led_off, dev, led); 	retval = led_off(dev, led); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_OFF, led_off, dev, led, retval); 	retval; })
 #endif
 #endif
 

@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -41,7 +39,7 @@ static inline int eeprom_read(const struct device * dev, off_t offset, void * da
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define eeprom_read(dev, offset, data, len) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_READ, eeprom_read, dev, offset, data, len); 	syscall__retval = eeprom_read(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_READ, eeprom_read, dev, offset, data, len, syscall__retval); 	syscall__retval; })
+#define eeprom_read(dev, offset, data, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_READ, eeprom_read, dev, offset, data, len); 	retval = eeprom_read(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_READ, eeprom_read, dev, offset, data, len, retval); 	retval; })
 #endif
 #endif
 
@@ -67,7 +65,7 @@ static inline int eeprom_write(const struct device * dev, off_t offset, const vo
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define eeprom_write(dev, offset, data, len) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_WRITE, eeprom_write, dev, offset, data, len); 	syscall__retval = eeprom_write(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_WRITE, eeprom_write, dev, offset, data, len, syscall__retval); 	syscall__retval; })
+#define eeprom_write(dev, offset, data, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_WRITE, eeprom_write, dev, offset, data, len); 	retval = eeprom_write(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_WRITE, eeprom_write, dev, offset, data, len, retval); 	retval; })
 #endif
 #endif
 
@@ -90,7 +88,7 @@ static inline size_t eeprom_get_size(const struct device * dev)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define eeprom_get_size(dev) ({ 	size_t syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_GET_SIZE, eeprom_get_size, dev); 	syscall__retval = eeprom_get_size(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_GET_SIZE, eeprom_get_size, dev, syscall__retval); 	syscall__retval; })
+#define eeprom_get_size(dev) ({ 	size_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_GET_SIZE, eeprom_get_size, dev); 	retval = eeprom_get_size(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_GET_SIZE, eeprom_get_size, dev, retval); 	retval; })
 #endif
 #endif
 

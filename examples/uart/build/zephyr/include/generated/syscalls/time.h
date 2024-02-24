@@ -8,8 +8,6 @@
 
 #ifndef _ASMLANGUAGE
 
-#include <stdarg.h>
-
 #include <syscall_list.h>
 #include <zephyr/syscall.h>
 
@@ -39,7 +37,7 @@ static inline int clock_gettime(clockid_t clock_id, struct timespec * ts)
 #if defined(CONFIG_TRACING_SYSCALL)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define clock_gettime(clock_id, ts) ({ 	int syscall__retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CLOCK_GETTIME, clock_gettime, clock_id, ts); 	syscall__retval = clock_gettime(clock_id, ts); 	sys_port_trace_syscall_exit(K_SYSCALL_CLOCK_GETTIME, clock_gettime, clock_id, ts, syscall__retval); 	syscall__retval; })
+#define clock_gettime(clock_id, ts) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CLOCK_GETTIME, clock_gettime, clock_id, ts); 	retval = clock_gettime(clock_id, ts); 	sys_port_trace_syscall_exit(K_SYSCALL_CLOCK_GETTIME, clock_gettime, clock_id, ts, retval); 	retval; })
 #endif
 #endif
 

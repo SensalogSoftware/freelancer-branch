@@ -8,8 +8,6 @@
 
 #define Z_SYSCALL_DRIVER_ADC(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, adc, ADC)
 
-#define Z_SYSCALL_DRIVER_AUXDISPLAY(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, auxdisplay, AUXDISPLAY)
-
 #define Z_SYSCALL_DRIVER_BBRAM(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, bbram, BBRAM)
 
 #define Z_SYSCALL_DRIVER_CAN(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, can, CAN)
@@ -28,10 +26,6 @@
 
 #define Z_SYSCALL_DRIVER_EEPROM(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, eeprom, EEPROM)
 
-#define Z_SYSCALL_DRIVER_FUEL_GAUGE_EMUL(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, fuel_gauge_emul, FUEL_GAUGE_EMUL)
-
-#define Z_SYSCALL_DRIVER_EMUL_SENSOR_BACKEND_API(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, emul_sensor_backend_api, EMUL_SENSOR_BACKEND_API)
-
 #define Z_SYSCALL_DRIVER_ENTROPY(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, entropy, ENTROPY)
 
 #define Z_SYSCALL_DRIVER_ESPI(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, espi, ESPI)
@@ -45,8 +39,6 @@
 #define Z_SYSCALL_DRIVER_FUEL_GAUGE(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, fuel_gauge, FUEL_GAUGE)
 
 #define Z_SYSCALL_DRIVER_GPIO(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, gpio, GPIO)
-
-#define Z_SYSCALL_DRIVER_HWSPINLOCK(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, hwspinlock, HWSPINLOCK)
 
 #define Z_SYSCALL_DRIVER_I2C(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, i2c, I2C)
 
@@ -80,8 +72,6 @@
 
 #define Z_SYSCALL_DRIVER_RESET(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, reset, RESET)
 
-#define Z_SYSCALL_DRIVER_RETAINED_MEM(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, retained_mem, RETAINED_MEM)
-
 #define Z_SYSCALL_DRIVER_RTC(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, rtc, RTC)
 
 #define Z_SYSCALL_DRIVER_SDHC(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, sdhc, SDHC)
@@ -107,8 +97,6 @@
 #define Z_SYSCALL_DRIVER_ITS(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, its, ITS)
 
 #define Z_SYSCALL_DRIVER_PCIE_CTRL(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, pcie_ctrl, PCIE_CTRL)
-
-#define Z_SYSCALL_DRIVER_SVC(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, svc, SVC)
 
 #define Z_SYSCALL_DRIVER_BC12_EMUL(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, bc12_emul, BC12_EMUL)
 
