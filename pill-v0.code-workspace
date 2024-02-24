@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "pill-v0",
+			"path": "."
+		}
+	],
+	"settings": {
+		"nrf-connect.applications": [
+			"${workspaceFolder}/examples/blinky",
+			"${workspaceFolder}/examples/adc",
+			"${workspaceFolder}/examples/littlefs",
+			"${workspaceFolder}/examples/uart",
+			"${workspaceFolder}/examples/button",
+			"${workspaceFolder}/examples/ble",
+			"${workspaceFolder}/examples/icm20948"
+		],
+		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:2.5.0}",
+		"nrf-connect.topdir": "${nrf-connect.sdk:2.5.0}"
+	}
+}

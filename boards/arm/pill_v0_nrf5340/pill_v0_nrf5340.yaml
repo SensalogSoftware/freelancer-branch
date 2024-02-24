@@ -1,0 +1,22 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+identifier: pill_v0_nrf5340
+name: Pill-V0-NRF5340
+type: mcu
+arch: arm
+ram: 512
+flash: 1024
+supported:
+  - gpio
+  - i2c
+  - i2s
+  - pwm
+  - watchdog
+  - usb-cdc
+  - usb-device
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+vendor: sensalog

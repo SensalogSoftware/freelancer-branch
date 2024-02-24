@@ -1,0 +1,10 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_PILL_V0_NRF5340
+
+config BOARD
+	default "pill_v0_nrf5340"
+
+	
+endif
